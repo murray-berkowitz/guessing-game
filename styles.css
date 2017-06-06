@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700");
+/*PRESETS*/
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-size: 4em;
+  color: white;
+  margin: 0;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 3em;
+  font-weight: 200;
+  margin: .75em 0;
+  color: #00470f;
+}
+
+h3 {
+  font-size: 2em;
+  font-weight: 200;
+  color: white;
+}
+
+h4 {
+  font-size: 1em;
+  color: black;
+  margin: 0;
+}
+
+/*GRID STYLES*/
+.span2 {
+  width: 15.83333%;
+  float: left;
+}
+
+.span3 {
+  width: 24.25%;
+  float: left;
+}
+
+.span4 {
+  width: 32.66667%;
+  float: left;
+}
+
+.span5 {
+  width: 41.08333%;
+  float: left;
+}
+
+.span6 {
+  width: 49.5%;
+  float: left;
+}
+
+.span7 {
+  width: 57.91667%;
+  float: left;
+}
+
+.span8 {
+  width: 66.33333%;
+  float: left;
+}
+
+.span9 {
+  width: 74.75%;
+  float: left;
+}
+
+.span10 {
+  width: 83.16667%;
+  float: left;
+}
+
+.span11 {
+  width: 91.58333%;
+  float: left;
+}
+
+.span12 {
+  width: 100%;
+  float: left;
+}
+
+.col {
+  margin-left: 1%;
+}
+
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.vertical-align {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/*HELPER CLASSES*/
+.inline {
+  display: inline-block;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.center, #main .wrapper .input input {
+  text-align: center;
+}
+
+.padded, .button {
+  padding: 1%;
+}
+
+.relative, .vertical-align, #main .wrapper {
+  position: relative;
+}
+
+.success, .button:hover {
+  background-color: green;
+  transition: all .15s linear;
+}
+
+.button {
+  width: 25%;
+  border-radius: 5px;
+  transition: all .15s linear;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:hover h4 {
+  color: white !important;
+}
+
+.overlay, #main:before {
+  content: '';
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.65);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+/*PAGE STYLES*/
+#main {
+  height: 100vh;
+  background-image: url(https://c2.staticflickr.com/4/3766/10634997144_1a861bf9bb_b.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+}
+
+#main .wrapper {
+  height: 100vh;
+}
+
+#main .wrapper .input input {
+  font-weight: bold !important;
+  height: 200px;
+  font-size: 8em;
+  color: #00470f;
+  width: 200px;
+  border-radius: 50%;
+  margin: .25em 0;
+}

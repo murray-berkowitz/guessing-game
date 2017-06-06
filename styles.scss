@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700');
+
+$default_font: 14px;
+$font_family:'Montserrat', sans-serif;
+$primary:white;
+$secondary:#00470f;
+/*PRESETS*/
+body {
+    margin:0;
+    padding:0;
+    overflow: hidden;
+    font-size:$default_font;
+    font-family:$font-family;
+}
+h1 {
+    font-size:4em;
+    color:$primary;
+    margin:0;
+    font-weight: 400;
+}
+
+h2 {
+    font-size:3em;
+    font-weight: 200;
+    margin:.75em 0;
+    color:$secondary;
+}
+h3 {
+    font-size:2em;
+    font-weight: 200;
+    color:$primary;
+}
+h4 {
+    font-size:1em;
+    color:black;
+    margin:0;
+}
+/*GRID STYLES*/
+
+@for $i from 2 through 11 {
+	.span#{$i} {
+		$x : 12/$i;
+		width: ((100-$x+1)/$x)*1%;
+        float:left;
+	}
+}
+.span12 {
+	width:100%;
+    float: left;
+}
+
+.col {
+	margin-left: 1%;
+}
+
+.wrapper {
+    max-width: 1000px;
+    margin:0 auto;
+}
+
+.vertical-align {
+    @extend .relative;
+    top:50%;
+    transform: translateY(-50%);
+}
+/*HELPER CLASSES*/
+.inline {
+    display:inline-block;
+}
+.bold {
+    font-weight:bold;
+}
+.center {
+    text-align: center;
+}
+.padded {
+    padding:1%;
+}
+.relative {
+    position: relative;
+}
+.success {
+    background-color:green;
+    transition: all .15s linear;
+}
+.button {
+    width: 25%;
+    border-radius:5px;
+    transition:all .15s linear;
+    background-color:white;
+    margin:0 auto;
+    @extend .padded;
+    &:hover {
+        @extend .success;
+        cursor:pointer;
+        h4 {
+            color:$primary !important;
+        }
+    }
+}
+
+.overlay {
+    content:'';
+    position: absolute;
+    background-color:rgba(0,0,0,.65);
+    width:100%;
+    height:100vh;
+    top:0;
+    left:0;
+}
+/*PAGE STYLES*/
+
+#main {
+   height:100vh;
+   background-image:url(https://c2.staticflickr.com/4/3766/10634997144_1a861bf9bb_b.jpg);
+   background-size:cover;
+   background-repeat:no-repeat;
+   background-position: center center;
+   position: relative;
+   &:before {
+       @extend .overlay;
+   }
+   .wrapper {
+       @extend .relative;
+       height:100vh;
+
+       .input {
+           input {
+               @extend .center;
+               font-weight: bold!important;
+               height:200px;
+               font-size:8em;
+               color:$secondary;
+               width:200px;
+               border-radius:50%;
+               margin:.25em 0;
+           }
+       }
+   }
+}
