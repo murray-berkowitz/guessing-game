@@ -19,7 +19,7 @@ h2 {
   font-size: 3em;
   font-weight: 200;
   margin: .75em 0;
-  color: #00470f;
+  color: #445E93;
 }
 
 h3 {
@@ -146,7 +146,7 @@ h4 {
   color: white !important;
 }
 
-.overlay, #main:before {
+.overlay {
   content: '';
   position: absolute;
   background-color: rgba(0, 0, 0, 0.65);
@@ -159,9 +159,10 @@ h4 {
 /*PAGE STYLES*/
 #main {
   height: 100vh;
-  background-image: url(https://c2.staticflickr.com/4/3766/10634997144_1a861bf9bb_b.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: #ff5252;
+  background-image: url(http://www.pngmart.com/files/3/Star-Transparent-PNG.png);
+  background-size: contain;
+  background-repeat: repeat;
   background-position: center center;
   position: relative;
 }
@@ -174,8 +175,11 @@ h4 {
   font-weight: bold !important;
   height: 200px;
   font-size: 8em;
-  color: #00470f;
+  border: none;
+  box-shadow: black 0 0 15px;
+  color: #445E93;
   width: 200px;
   border-radius: 50%;
   margin: .25em 0;
+  background-color: #FCECC9;
 }

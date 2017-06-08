@@ -3,7 +3,9 @@
 $default_font: 14px;
 $font_family:'Montserrat', sans-serif;
 $primary:white;
-$secondary:#00470f;
+$secondary:#445E93;
+$tertiary: #ff5252;
+$fourth: #FCECC9;
 /*PRESETS*/
 body {
     margin:0;
@@ -112,14 +114,12 @@ h4 {
 
 #main {
    height:100vh;
-   background-image:url(https://c2.staticflickr.com/4/3766/10634997144_1a861bf9bb_b.jpg);
-   background-size:cover;
-   background-repeat:no-repeat;
+   background-color: $tertiary;
+   background-image:url(http://www.pngmart.com/files/3/Star-Transparent-PNG.png);
+   background-size:contain;
+   background-repeat:repeat;
    background-position: center center;
    position: relative;
-   &:before {
-       @extend .overlay;
-   }
    .wrapper {
        @extend .relative;
        height:100vh;
@@ -130,10 +130,13 @@ h4 {
                font-weight: bold!important;
                height:200px;
                font-size:8em;
+               border:none;
+               box-shadow:black 0 0 15px;
                color:$secondary;
                width:200px;
                border-radius:50%;
                margin:.25em 0;
+               background-color: $fourth;
            }
        }
    }
