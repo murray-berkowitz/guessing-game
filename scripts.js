@@ -47,8 +47,10 @@ Game.prototype.checkGuess = function(){
         }
         else {
             this.pastGuesses.push(this.playersGuess);
+            $('.attempt-'+this.pastGuesses.length+' h1').text(this.playersGuess);
             var difference = this.difference();
-            if(this.pastGuesses.length === 5){
+            if(this.pastGuesses.length === 4){
+                $('.button').addClass('disable');
                 return 'You Lose.';
             }
             if(difference < 10){
@@ -73,6 +75,7 @@ Game.prototype.playersGuessSubmission = function(num){
         throw "That is an invalid guess."
     }
     this.playersGuess = num;
+    console.log(this.playersGuess);
     return this.checkGuess();
 }
 
@@ -84,3 +87,22 @@ Game.prototype.provideHint = function(){
     var hints = [this.winningNumber, generateWinningNumber(),generateWinningNumber()];
     return shuffle(hints);
 }
+
+function initializeGuess(game){
+    var input = $('#guess').val();
+    $('#guess').val("");
+    var result = game.playersGuessSubmission(parseInt(input));
+    console.log(result);
+}
+
+$(document).ready(function(){
+    var game = newGame();
+    $('.button').click(function(e){
+        initializeGuess(game);
+    })
+    $('#guess').keypress(function(e){
+        if (e.which == 13){
+            initializeGuess(game);
+        }
+    })
+})

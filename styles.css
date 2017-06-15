@@ -99,14 +99,14 @@ h4 {
   margin: 0 auto;
 }
 
-.vertical-align, #main .wrapper .attempts .span3 .attempt h1 {
+.vertical-align, #main .wrapper .attempts .span3 [class^='attempt-'] h1 {
   top: 50%;
   transform: translateY(-50%);
   overflow: hidden;
 }
 
 /*HELPER CLASSES*/
-.inline, #main .wrapper .attempts .span3 .attempt {
+.inline, #main .wrapper .attempts .span3 [class^='attempt-'] {
   display: inline-block;
 }
 
@@ -122,13 +122,18 @@ h4 {
   padding: 1%;
 }
 
-.relative, .vertical-align, #main .wrapper .attempts .span3 .attempt h1, #main .wrapper {
+.relative, .vertical-align, #main .wrapper .attempts .span3 [class^='attempt-'] h1, #main .wrapper {
   position: relative;
 }
 
 .success, .button:hover {
   background-color: green;
   transition: all .15s linear;
+}
+
+.disable {
+  pointer-events: none;
+  opacity: .5;
 }
 
 .button {
@@ -192,7 +197,7 @@ h4 {
   margin: 1.5em 0;
 }
 
-#main .wrapper .attempts .span3 .attempt {
+#main .wrapper .attempts .span3 [class^='attempt-'] {
   width: 50%;
   border: 4px solid #FCECC9;
   height: 100px;

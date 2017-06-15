@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Foundations Guessing Game</title>
     <link rel="stylesheet" href="styles.min.css">
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 </head>
 <body>
     <section id="main" class="span12">
@@ -16,29 +20,29 @@
                     <h3>Guess a number between 1-100... but be careful.</h3>
                 </div>
                 <div class="input center">
-                    <input min="0" max="100" type="number" placeholder="46">
+                    <input id="guess" min="0" max="100" type="number" placeholder="46">
                 </div>
                 <div class="attempts span12">
                     <div class="span3">
-                        <div class="attempt">
+                        <div class="attempt-1">
                             <h1>--</h1>
                         </div>
                         <H3>GUESS 1</H3>
                     </div>
                     <div class="span3 col">
-                        <div class="attempt">
+                        <div class="attempt-2">
                             <h1>--</h1>
                         </div>
                         <H3>GUESS 2</H3>
                     </div>
                     <div class="span3 col">
-                        <div class="attempt">
+                        <div class="attempt-3">
                             <h1>--</h1>
                         </div>
                         <H3>GUESS 3</H3>
                     </div>
                     <div class="span3 col">
-                        <div class="attempt">
+                        <div class="attempt-4">
                             <h1>--</h1>
                         </div>
                         <H3>GUESS 4</H3>
