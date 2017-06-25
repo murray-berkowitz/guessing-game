@@ -39,6 +39,14 @@ Game.prototype.isLower = function(){
 }
 Game.prototype.checkGuess = function(){
     if(this.playersGuess===this.winningNumber){
+        $('.notification h1').text('Congratulations!');
+        $('.notification').addClass('fade victory');
+        $('#main').addClass('alerted');
+        setTimeout(function(){
+            $('.notification').removeClass('fade victory');
+            $('#main').removeClass('alerted');
+        },2500);
+        $('.enter, .hint').addClass('disable');
         return 'You Win!';
     }
     else { 
@@ -50,19 +58,54 @@ Game.prototype.checkGuess = function(){
             $('.attempt-'+this.pastGuesses.length+' h1').text(this.playersGuess);
             var difference = this.difference();
             if(this.pastGuesses.length === 4){
-                $('.button').addClass('disable');
+                $('.notification h1').text('You suck.');
+                $('.notification').addClass('fade lose');
+                $('#main').addClass('alerted');
+                setTimeout(function(){
+                    $('.notification').removeClass('fade lose');
+                    $('#main').removeClass('alerted');
+                },2500);
+                $('.enter, .hint').addClass('disable');
                 return 'You Lose.';
             }
             if(difference < 10){
+                $('.notification h1').text('SCORCHING HOT!');
+                $('.notification').addClass('fade burning');
+                $('#main').addClass('alerted');
+                setTimeout(function(){
+                    $('.notification').removeClass('fade burning');
+                    $('#main').removeClass('alerted');
+                },2500);
                 return "You're burning up!"
             }
             else if(difference < 25) {
+                $('.notification h1').text('Heating up...');
+                $('.notification').addClass('fade heating');
+                $('#main').addClass('alerted');
+                setTimeout(function(){
+                    $('.notification').removeClass('fade heating');
+                    $('#main').removeClass('alerted');
+                },2500);
                 return "You're lukewarm."
             }
             else if(difference < 50){
+                $('.notification h1').text("It's a tad chilly in here...");
+                $('.notification').addClass('fade cool');
+                $('#main').addClass('alerted');
+                setTimeout(function(){
+                    $('.notification').removeClass('fade cool');
+                    $('#main').removeClass('alerted');
+                },2500);
                 return "You're a bit chilly."
             }
             else{
+                $('.notification h1').text('Colder than the Rockies');
+                $('.notification').addClass('fade freezing');
+                $('#main').addClass('alerted');
+                setTimeout(function(){
+                    $('.notification').removeClass('fade freezing');
+                    $('#main').removeClass('alerted');
+                },2500);
                return "You're ice cold!" 
             }
         }
@@ -97,12 +140,17 @@ function initializeGuess(game){
 
 $(document).ready(function(){
     var game = newGame();
-    $('.button').click(function(e){
+    $('.enter').click(function(e){
         initializeGuess(game);
     })
     $('#guess').keypress(function(e){
         if (e.which == 13){
             initializeGuess(game);
         }
+    })
+    $('.reset').click(function(e){
+        game = newGame();
+         $('.enter, .hint').removeClass('disable');
+        $('*[class^="attempt-"] h1').text('--');
     })
 })

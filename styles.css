@@ -114,7 +114,7 @@ h4 {
   font-weight: bold;
 }
 
-.center, #main .wrapper .input input {
+.center, #main .notification, #main .wrapper .input input {
   text-align: center;
 }
 
@@ -122,8 +122,16 @@ h4 {
   padding: 1%;
 }
 
+.hide {
+  display: none;
+}
+
 .relative, .vertical-align, #main .wrapper .attempts .span3 [class^='attempt-'] h1, #main .wrapper {
   position: relative;
+}
+
+.abs, #main .notification, #main:after {
+  position: absolute;
 }
 
 .success, .button:hover {
@@ -162,14 +170,98 @@ h4 {
   left: 0;
 }
 
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 100;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade {
+  display: block !important;
+  animation: fade;
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
+}
+
+.burning h1 {
+  color: red !important;
+}
+
+.heating h1 {
+  color: #eb4e39 !important;
+}
+
+.cool h1 {
+  color: #0EBFE9 !important;
+}
+
+.freezing h1 {
+  color: #A5F2F3 !important;
+}
+
+.victory {
+  background-color: green !important;
+}
+
+.victory h1 {
+  color: white;
+}
+
+.lose {
+  background-color: grey !important;
+}
+
+.lose h1 {
+  color: white;
+}
+
 /*PAGE STYLES*/
 #main {
   height: 100vh;
   position: relative;
-  background: url(http://www.pngmart.com/files/3/Star-Transparent-PNG.png), radial-gradient(ellipse closest-corner, #ff5252 50%, #ff8181 100%);
+  background: radial-gradient(ellipse closest-corner, #ff5252 50%, #ff8181 100%);
   background-size: contain;
   background-repeat: repeat;
   background-position: center center;
+}
+
+#main .notification {
+  z-index: 10;
+  opacity: 0;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  padding: 9% 0;
+}
+
+#main .notification h1 {
+  font-size: 140px;
+}
+
+#main:after {
+  content: '';
+  opacity: 0;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+#main.alerted:after {
+  display: block !important;
+  animation: fade;
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
 }
 
 #main .wrapper {
