@@ -318,3 +318,9 @@ h4 {
   color: black !important;
   background-color: grey;
 }
+
+.hints h3, .hints h4 {
+  display:inline-block;
+  font-size:22px;
+  margin-top:0;
+}

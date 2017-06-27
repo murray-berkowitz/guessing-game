@@ -151,6 +151,16 @@ $(document).ready(function(){
     $('.reset').click(function(e){
         game = newGame();
          $('.enter, .hint').removeClass('disable');
-        $('*[class^="attempt-"] h1').text('--');
+         $('.hints').addClass('hide');
+         $('*[class^="attempt-"] h1').text('--');
+    })
+    $('.hint').click(function(e){
+        var hints = game.provideHint();
+        console.log(hints);
+        for(var i = 0; i < hints.length; i++){
+            $('.hints .'+i).text(hints[i]);
+        }
+        $('.hints').removeClass('hide');
+        $('.hint').addClass('disable');
     })
 })

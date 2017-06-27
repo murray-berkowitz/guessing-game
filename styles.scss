@@ -253,7 +253,14 @@ h4 {
                     }
                 }
            }
-
+           .hints {
+               h3 {
+                   @extend .inline;
+               }
+               h4 {
+                   @extend .inline;
+               }
+           }
            .button {
                @extend .inline;
                width:10%;
